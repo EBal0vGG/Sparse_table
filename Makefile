@@ -11,13 +11,10 @@ run: build/run
 	@printf "Running executable\n"
 	@./build/run
 
-build/run: build/stb.o build/main.o
+build/run: build/main.o
 	@printf "Compilation is successful\n"
-	@$(CC) build/stb.o build/main.o -o build/run
+	@$(CC) build/main.o -o build/run
 	@printf "Linking is successful\n"
-
-build/stb.o: src/stb.cpp
-	@$(CC) $(CFLAGS) -I $(PATH_TO_INCLUDE) -c src/stb.cpp -o build/stb.o
 
 build/main.o: src/main.cpp
 	@$(CC) $(CFLAGS) -I $(PATH_TO_INCLUDE) -c src/main.cpp -o build/main.o

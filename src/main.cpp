@@ -2,6 +2,8 @@
 
 #include "stb.hpp"
 
+using namespace std;
+
 int main() {
     int size;
     cout << "Введите размер вектора: ";
